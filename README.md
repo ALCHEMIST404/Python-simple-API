@@ -2,5 +2,5 @@
 ### A simple set of API methods that include:
 
 + Simple database management
-+ Loading an image
++ Upload multiple files
 + System status query
