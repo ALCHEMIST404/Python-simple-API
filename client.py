@@ -10,17 +10,16 @@ import json
 import base64
 from client_test import client_test
 
-CLIENT_FOLDER = "Client/"
+CLIENT_FOLDER = "Client/" #Folder where client files are located
 
 def main():
     
     test = client_test(CLIENT_FOLDER) #Test method class for functional testing
     
     #сalling test methods
-    
     #client_test.test_system_state() #State of the system
     #client_test.test_BD() #Database testing
-    test.test_file_transfer_to_server() #Testing image upload to server
+    test.test_files_transfer_to_server() #File upload testing
     
 if __name__ == "__main__":
     main()    

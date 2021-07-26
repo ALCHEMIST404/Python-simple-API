@@ -14,8 +14,11 @@ from server_state import Server_state
 app = Flask(__name__)
 api = Api(app)
 
+
+
 # Actually setup the Api resource routing here
-api.add_resource(Uploading_files.Img_down, '/Img_down')
+
+api.add_resource(Uploading_files.File_down, '/File_down')
 api.add_resource(Server_state, '/Server_state')
 api.add_resource(TodoList, '/todos')
 api.add_resource(Todo, '/todos/<todo_id>')

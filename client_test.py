@@ -35,19 +35,27 @@ class client_test:
         result = json.loads(response.text)
         print(result)
         
-    #Transferring one image
-    def test_file_transfer_to_server(self):
-        method_url = 'http://localhost:5000/Img_down'
-        file = self.CLIENT_FOLDER + '1.jpg'
+    #Transferring many files
+    def test_files_transfer_to_server(self):
+        l = []
         
-        print(file)
+        method_url = 'http://localhost:5000/File_down'
         
-        image_file = open(file, "rb")
-        encoded_string = base64.b64encode(image_file.read())
+        l.append(self.CLIENT_FOLDER + '1.jpg')
+        l.append(self.CLIENT_FOLDER + '2.jpg')
+        l.append(self.CLIENT_FOLDER + 'test.docx')
+        l.append(self.CLIENT_FOLDER + 'test.xlsx')
         
-        data={'img': encoded_string, 'file_name': "123"}
+        i = 0
+        
+        while i < len(l):
+            image_file = open(l[i], "rb")
+            encoded_string = base64.b64encode(image_file.read())
+            data={'img': encoded_string, 'file_name': str(l[i])}
     
-        response = requests.post(method_url, data)
-        result = json.loads(response.text)
-        print(result)
+            response = requests.post(method_url, data)
+            result = json.loads(response.text)
+            print(result)
+            
+            i=i+1
         

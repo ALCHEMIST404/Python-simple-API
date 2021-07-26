@@ -13,23 +13,29 @@ import base64
 
 parser_docs = reqparse.RequestParser()
 parser_docs.add_argument('img')
+parser_docs.add_argument('file_name')
 
+SERVER_FOLDER = "Server/"
 #Uploading one image
-class Img_down(Resource):
+class File_down(Resource):
     def post(self):
         
         args = parser_docs.parse_args()
         file = str(args['img'])
-        status = "123"
+        try:
+            file_name = str(args['file_name'].split("/")[-1])
+            status = file_name
+        except Exception:
+            file_name = str(args['file_name'])
+            status = str(sys.exc_info())
         try: 
             decoded_data = base64.b64decode(file)
-            img_file = open("Server/test.jpg", 'wb')
+            img_file = open(SERVER_FOLDER + file_name, 'wb')
             img_file.write(decoded_data)
             img_file.close()
-            status = "Image uploaded to the server"
+            status = file_name#"Image uploaded to the server"
             
         except Exception:
             status = str(sys.exc_info())
         return status
-    
     
