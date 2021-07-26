@@ -5,7 +5,7 @@
 + Upload multiple files
 + System status query
 
-### How to start the application
+### How to start the application:
 + To run the server, run the file "server" from the folder "server".
 + To test the client's work, open the "client" file from the "client" folder.
 
