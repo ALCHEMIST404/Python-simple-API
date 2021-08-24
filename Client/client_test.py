@@ -5,9 +5,13 @@ Created on Mon Jul 26 01:16:19 2021
 @author: Ирина
 """
 from requests import put, get, post
+from flask_restful import reqparse, abort, Api, Resource
 import requests
 import json
 import base64
+#import File_down
+import sys
+
 
 class client_test:
     def __init__(self, CLIENT_FOLDER, CLIENT_PREFIX):
@@ -16,9 +20,24 @@ class client_test:
         @params:
             CLIENT_FOLDER        - Required  : сlient file location (Str)
         """
-        self.CLIENT_FOLDER = CLIENT_FOLDER
-        self.CLIENT_PREFIX = CLIENT_PREFIX
+        self.CLIENT_FOLDER = CLIENT_FOLDER # Client's content folder
+        self.CLIENT_PREFIX = CLIENT_PREFIX # Client's IP
         
+     
+    #запрос изображения. Переделать название
+    def test_get_photo(self):
+        print("------------TEST_system_state------------")
+        method_url = self.CLIENT_PREFIX + 'Get_photo'
+        data={}
+        response = requests.get(method_url, data)
+        
+        result = json.loads(response.text)
+        result1 = base64.b64decode(result.encode('utf-8'))
+
+        img_file = open(self.CLIENT_FOLDER + "file_name.jpg", 'wb')
+        img_file.write(result1)
+        img_file.close()
+        print("Image received and saved")
         
     #Checking the status of the system
     def test_system_state(self):
