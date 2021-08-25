@@ -9,7 +9,6 @@ from flask_restful import reqparse, abort, Api, Resource
 import requests
 import json
 import base64
-#import File_down
 import sys
 
 
@@ -19,21 +18,23 @@ class client_test:
         Calling Test Methods
         @params:
             CLIENT_FOLDER        - Required  : сlient file location (Str)
+            CLIENT_PREFIX        - Required  : сlient IP (Str)
         """
         self.CLIENT_FOLDER = CLIENT_FOLDER # Client's content folder
         self.CLIENT_PREFIX = CLIENT_PREFIX # Client's IP
         
      
-    #запрос изображения. Переделать название
+    #Requesting an image from the server
     def test_get_photo(self):
         print("------------TEST_system_state------------")
-        method_url = self.CLIENT_PREFIX + 'Get_photo'
-        data={}
-        response = requests.get(method_url, data)
+        method_url = self.CLIENT_PREFIX + 'Get_photo' # API method used
+        data={} # Request data
+        response = requests.get(method_url, data) # Server request
         
-        result = json.loads(response.text)
-        result1 = base64.b64decode(result.encode('utf-8'))
+        result = json.loads(response.text) # Query Result
+        result1 = base64.b64decode(result.encode('utf-8')) # Decoding the result
 
+        # Creating an image file
         img_file = open(self.CLIENT_FOLDER + "file_name.jpg", 'wb')
         img_file.write(result1)
         img_file.close()
@@ -42,29 +43,31 @@ class client_test:
     #Checking the status of the system
     def test_system_state(self):
         print("------------test_system_state------------")
-        method_url = self.CLIENT_PREFIX + 'Server_state'
-        data={}
-        response = requests.get(method_url, data)
-        result = json.loads(response.text)
+        method_url = self.CLIENT_PREFIX + 'Server_state' # API method used
+        data={} # Request data
+        response = requests.get(method_url, data) # Server request
+        result = json.loads(response.text) # Query Result
         print(result)
     
     #Testing a small database
     def test_BD(self):
         print("-----------------test_BD------------------")
-        method_url = self.CLIENT_PREFIX + 'todos' 
-        data={'task': 'something new'}
-        response = requests.post(method_url, data)
-        result = json.loads(response.text)
+        method_url = self.CLIENT_PREFIX + 'todos' # API method used
+        data={'task': 'something new'}  # Request data
+        response = requests.post(method_url, data) # Server request
+        result = json.loads(response.text) # Query Result
         print(result)
+        
         
     #Transferring many files
     def test_files_transfer_to_server(self):
         print("------test_files_transfer_to_server-------")
         
-        l = []
+        l = [] # list of files to send
         
-        method_url = self.CLIENT_PREFIX + 'File_down'
+        method_url = self.CLIENT_PREFIX + 'File_down' # API method used
         
+        #list of files to be sent
         l.append(self.CLIENT_FOLDER + '1.jpg')
         l.append(self.CLIENT_FOLDER + '2.jpg')
         l.append(self.CLIENT_FOLDER + 'test.docx')
@@ -73,13 +76,14 @@ class client_test:
         
         i = 0
         
+        # sending files
         while i < len(l):
-            image_file = open(l[i], "rb")
-            encoded_string = base64.b64encode(image_file.read())
-            data={'img': encoded_string, 'file_name': str(l[i])}
+            image_file = open(l[i], "rb") # opening a file
+            encoded_string = base64.b64encode(image_file.read()) # String encoding to send to server
+            data={'img': encoded_string, 'file_name': str(l[i])} # Request data
     
-            response = requests.post(method_url, data)
-            result = json.loads(response.text)
+            response = requests.post(method_url, data) # Server request
+            result = json.loads(response.text) #Query Result
             print(result)
             
             i=i+1
