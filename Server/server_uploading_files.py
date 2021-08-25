@@ -36,4 +36,3 @@ class File_down(Resource):
         except Exception:
             status = str(sys.exc_info())
         return status
-    
