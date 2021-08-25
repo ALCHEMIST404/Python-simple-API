@@ -10,3 +10,10 @@
 + To test the client's work, open the "client" file from the "client" folder.
 
 You can change the CLIENT_PREFIX value depending on where your server is running. By default, the server can be run on localhost: 5000.
+
+### Setting "Server":
++ Download and unzip the archive:
+https://drive.google.com/drive/folders/1iNKe1xpWTdZe5wBcW39RWfpX3fhRUyub?usp=sharing
++ The contents of the folder should be placed in: Python-simple-API/Server/ssd/
+
+
