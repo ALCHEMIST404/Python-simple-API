@@ -11,6 +11,7 @@ import server_uploading_files #import Img_down
 from BD_server import Todo, TodoList
 from server_state import Server_state
 from server_sending_files import TEST_Server_state
+from skrin import Skrin
 
 app = Flask(__name__)
 api = Api(app)
@@ -19,6 +20,7 @@ api = Api(app)
 
 # Actually setup the Api resource routing here
 api.add_resource(TEST_Server_state, '/Get_photo')
+api.add_resource(Skrin, '/Get_skrin')
 api.add_resource(server_uploading_files.File_down, '/File_down')
 api.add_resource(Server_state, '/Server_state')
 api.add_resource(TodoList, '/todos')
