@@ -12,6 +12,7 @@ import os
 import base64
 import server_uploading_files
 
+#Parser initialization
 parser = reqparse.RequestParser()
 parser.add_argument('task')
 

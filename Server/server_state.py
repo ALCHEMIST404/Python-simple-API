@@ -13,4 +13,4 @@ import os
 #Server status    
 class Server_state(Resource):
     def get(self):
-        return "Sysytem works"
+        return "The system works" 

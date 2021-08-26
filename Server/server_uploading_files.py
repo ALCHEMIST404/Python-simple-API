@@ -16,6 +16,7 @@ parser_docs.add_argument('img')
 parser_docs.add_argument('file_name')
 
 SERVER_FOLDER = "Server/"
+
 #Uploading one image
 class File_down(Resource):
     def post(self):
