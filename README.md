@@ -1,9 +1,11 @@
 # Python-simple-API
 ### A simple set of API methods that include:
 
-+ Simple database management
-+ Upload multiple files
-+ System status query
++ Send photo to client (test part API)
++ Send a screenshot of the camera
++ Upload files to server
++ System status information
++ Working with the database (test functionality)
 
 ### How to start the application:
 + To run the server, run the file "server" from the folder "server".
