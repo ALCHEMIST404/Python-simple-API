@@ -9,29 +9,15 @@ import sys
 import requests
 import os
 import base64
+from files_and_images import File_work
 
 class Skrin(Resource):
 	def get(self):
-		os.system("wmctrl -a ssd-mobilenet-v2 | Network 40 FPS")
-		os.system("gnome-screenshot -w -f filename.png")
-		#return "OK"
+		file_name = 'filename.png'
+		File_work.make_scrin()
 
-		print("------test_skrin_transfer_to_client-------")
-		    
-		l = []
-
-		#method_url = SERVER_PREFIX + 'File_down'
-		l.append('filename.png')
-		
-		i = 0
-		print("----")
-		while i < len(l):
-		    image_file = open(l[i], "rb")
-		    encoded_string = base64.b64encode(image_file.read())
-		    print(encoded_string)
-		    
-		    i=i+1
-		
-		return encoded_string.decode('utf-8') #.encode('utf-8')
+		file_for_send = []
+		file_for_send.append(file_name)
+		return File_work.send_file(file_for_send)
 
 
