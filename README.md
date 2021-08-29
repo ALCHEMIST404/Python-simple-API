@@ -1,11 +1,11 @@
 # Python-simple-API
 ### A simple set of API methods that include:
 
-+ Send photo to client (test part API)
-+ Send a screenshot of the camera
-+ Upload files to server
-+ System status information
-+ Working with the database (test functionality)
++ Sending a document with recognition information.
++ Send a screenshot of the camera.
++ Upload files to server.
++ System status information.
++ Working with the database (test functionality).
 
 ### How to start the application:
 + To run the server, run the file "server" from the folder "server".
@@ -19,10 +19,10 @@ https://drive.google.com/drive/folders/1iNKe1xpWTdZe5wBcW39RWfpX3fhRUyub?usp=sha
 + The contents of the folder should be placed in: Python-simple-API/Server/ssd/
 
 ### API methods:
-#### Get_photo -  Send photo to client (test part API)
+#### Get_State_recognition -  Sending a document with recognition information
 
 Usage example: 
-192.168.1.9:5000/Get_photo
+192.168.1.9:5000/Get_State_recognition
 
 Saves the photo on the client in the "Client" folder
 
