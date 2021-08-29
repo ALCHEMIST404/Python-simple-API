@@ -23,11 +23,10 @@ class client_test:
         self.CLIENT_FOLDER = CLIENT_FOLDER # Client's content folder
         self.CLIENT_PREFIX = CLIENT_PREFIX # Client's IP
         
-     
-    #Requesting an image from the server
-    def test_get_photo(self):
-        print("------------TEST_system_state------------")
-        method_url = self.CLIENT_PREFIX + 'Get_photo' # API method used
+    #Recognition process data
+    def test_get_state_recognition(self):
+        print("------------test_get_state_recognition------------")
+        method_url = self.CLIENT_PREFIX + 'Get_State_recognition' # API method used
         data={} # Request data
         response = requests.get(method_url, data) # Server request
         
@@ -35,7 +34,23 @@ class client_test:
         result1 = base64.b64decode(result.encode('utf-8')) # Decoding the result
 
         # Creating an image file
-        img_file = open(self.CLIENT_FOLDER + "file_name.jpg", 'wb')
+        img_file = open(self.CLIENT_FOLDER + "state.txt", 'wb')
+        img_file.write(result1)
+        img_file.close()
+        print("Recognition state received and saved")
+        
+    #Getting a screenshot of the recognition program
+    def test_get_screenshot(self):
+        print("------------test_get_screenshot------------")
+        method_url = self.CLIENT_PREFIX + 'Get_screen' # API method used
+        data={} # Request data
+        response = requests.get(method_url, data) # Server request
+        
+        result = json.loads(response.text) # Query Result
+        result1 = base64.b64decode(result.encode('utf-8')) # Decoding the result
+
+        # Creating an image file
+        img_file = open(self.CLIENT_FOLDER + "state.png", 'wb')
         img_file.write(result1)
         img_file.close()
         print("Image received and saved")
@@ -57,7 +72,6 @@ class client_test:
         response = requests.post(method_url, data) # Server request
         result = json.loads(response.text) # Query Result
         print(result)
-        
         
     #Transferring many files
     def test_files_transfer_to_server(self):
@@ -87,4 +101,6 @@ class client_test:
             print(result)
             
             i=i+1
+            
+    
         
