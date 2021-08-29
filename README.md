@@ -18,4 +18,37 @@ You can change the CLIENT_PREFIX value depending on where your server is running
 https://drive.google.com/drive/folders/1iNKe1xpWTdZe5wBcW39RWfpX3fhRUyub?usp=sharing
 + The contents of the folder should be placed in: Python-simple-API/Server/ssd/
 
+### API methods:
+#### Get_photo -  Send photo to client (test part API)
+
+Usage example: 
+192.168.1.9:5000/Get_photo
+
+Saves the photo on the client in the "Client" folder
+
+#### Get_screen - Send to client a screenshot of the camera
+
+Usage example: 
+192.168.1.9:5000/Get_screen
+
+Send to the client a screenshot taken by the server's webcam
+
+#### File_down - Upload files to server
+
+Usage example: 
+192.168.1.9:5000/Get_screen_file
+
+Where file is the base64.b64encode(file.read())
+ 
+#### Server_state - System status information
+
+Usage example: 
+192.168.1.9:5000/Server_state
+
+Will display the current information about the state of the server
+
+#### Stubs for methods that organize the work of the database
++ todos - Working with the database (test functionality)
++ todos/<todo_id> - Working with the database (test functionality)
+
 
