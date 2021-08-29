@@ -67,15 +67,19 @@ while True:
 	# print the detections
 	print("detected {:d} objects in image".format(len(detections)))
 	
-	for detection in detections:
-		print(detection)
-		print("########################")
-		print("detection.Left = ", detection.Left)
-		print("detection.Right = ", detection.Right)
-		print("detection.Top = ", detection.Top)
-		print("detection.Bottom = ", detection.Bottom)
-		print("########################")
+	f = open('state.txt', 'w')
 
+	for detection in detections:
+		f.write(str("detected {:d} objects in image".format(len(detections)))+ '\n')
+		f.write(str(detection)+ '\n')
+		f.write("########################")
+		f.write("detection.Left = " + str(detection.Left) + '\n')
+		f.write("detection.Right = " + str(detection.Right)+ '\n')
+		f.write("detection.Top = " + str(detection.Top)+ '\n')
+		f.write("detection.Bottom = " + str(detection.Bottom)+ '\n')
+		f.write("########################")
+	
+	
 	# render the image
 	output.Render(img)
 
@@ -84,8 +88,10 @@ while True:
 
 	# print out performance info
 	net.PrintProfilerTimes()
-
+	f.write(str(net.PrintProfilerTimes())+ '\n')
+	
 	# exit on input/output EOS
+	f.close()
 	if not input.IsStreaming() or not output.IsStreaming():
 		break
 
