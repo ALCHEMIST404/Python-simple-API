@@ -4,6 +4,9 @@ Created on Mon Jul 26 01:38:49 2021
 
 @author: Ирина
 """
+###################################################
+#A stub for database methods. Here, there is no connected database and access to it is programmatically regulated
+###################################################
 from flask import Flask,abort,render_template,request,redirect,url_for
 from flask_restful import reqparse, abort, Api, Resource
 import sys
@@ -12,7 +15,6 @@ import os
 import base64
 import server_uploading_files
 
-#Parser initialization
 parser = reqparse.RequestParser()
 parser.add_argument('task')
 
