@@ -1,0 +1,2 @@
+gnome-terminal  --command="python /home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/ssd/VIDEO_detectnet_test.py --model=/home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/ssd/models/Part_of_products/ssd-mobilenet.onnx --labels=/home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/ssd/models/Part_of_products/labels.txt --input-blob=input_0 --output-cvg=scores --output-bbox=boxes /dev/video0"
+
