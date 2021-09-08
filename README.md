@@ -22,6 +22,7 @@ You can change the CLIENT_PREFIX value depending on where your server is running
 ### Setting "Server":
 + Download and unzip the archive:
 https://drive.google.com/drive/folders/1iNKe1xpWTdZe5wBcW39RWfpX3fhRUyub?usp=sharing (old. 3 labels)
+https://drive.google.com/drive/folders/1nxho2-I-x8JnFPEA_B8ID_j5KOMyYkGV?usp=sharing (New. 6 labels)
 
 + The contents of the folder should be placed in: Python-simple-API/Server/ssd/
 
