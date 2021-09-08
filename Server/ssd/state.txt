@@ -1,0 +1,17 @@
+detected 1 objects in image
+<detectNet.Detection object>
+   -- ClassID: 6
+   -- Confidence: 0.993867
+   -- Left:    460.312
+   -- Top:     103.008
+   -- Right:   758.447
+   -- Bottom:  719
+   -- Width:   298.135
+   -- Height:  615.992
+   -- Area:    183649
+   -- Center:  (609.38, 411.004)
+########################detection.Left = 460.3125
+detection.Right = 758.447021484
+detection.Top = 103.0078125
+detection.Bottom = 719.0
+########################

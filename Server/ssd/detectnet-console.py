@@ -81,6 +81,7 @@ while True:
 	output.SetStatus("{:s} | Network {:.0f} FPS".format(opt.network, net.GetNetworkFPS()))
 
 	# print out performance info
+	controll_state.Camera_status_monitoring()
 	net.PrintProfilerTimes()
 
 	f.write("########################"+'\n')

@@ -20,6 +20,8 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE.
 #
+from os.path import expanduser
+import datetime
 
 import jetson.inference
 import jetson.utils
@@ -56,8 +58,12 @@ input = jetson.utils.videoSource(opt.input_URI, argv=sys.argv)
 output = jetson.utils.videoOutput(opt.output_URI, argv=sys.argv+is_headless)
 
 # process frames until the user exits
-while True:
 
+
+
+while True:
+	
+	#f = open('state.txt', 'w')
 	# capture the next image
 	img = input.Capture()
 
@@ -67,9 +73,10 @@ while True:
 	# print the detections
 	print("detected {:d} objects in image".format(len(detections)))
 	
-	f = open('state.txt', 'w')
+	
 
 	for detection in detections:
+		f = open("/home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/ssd/state.txt", 'w')
 		f.write(str("detected {:d} objects in image".format(len(detections)))+ '\n')
 		f.write(str(detection)+ '\n')
 		f.write("########################")
@@ -77,8 +84,8 @@ while True:
 		f.write("detection.Right = " + str(detection.Right)+ '\n')
 		f.write("detection.Top = " + str(detection.Top)+ '\n')
 		f.write("detection.Bottom = " + str(detection.Bottom)+ '\n')
-		f.write("########################")
-	
+		f.write("########################"+ '\n')
+		f.close()
 	
 	# render the image
 	output.Render(img)
@@ -88,11 +95,11 @@ while True:
 
 	# print out performance info
 	net.PrintProfilerTimes()
-	f.write(str(net.PrintProfilerTimes())+ '\n')
 	
 	# exit on input/output EOS
-	f.close()
+	
 	if not input.IsStreaming() or not output.IsStreaming():
-		break
+		print("Camera does not work. Stopping the system")
+		break 
 
 
