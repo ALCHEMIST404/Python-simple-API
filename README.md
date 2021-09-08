@@ -7,6 +7,12 @@
 + System status information.
 + Working with the database (test functionality).
 
+### To control the operation of the system, added:
++ auto boot at power on
++ server start
++ neural network launch
++ monitoring system launch
+
 ### How to start the application:
 + To run the server, run the file "server" from the folder "server".
 + To test the client's work, open the "client" file from the "client" folder.
@@ -15,7 +21,8 @@ You can change the CLIENT_PREFIX value depending on where your server is running
 
 ### Setting "Server":
 + Download and unzip the archive:
-https://drive.google.com/drive/folders/1iNKe1xpWTdZe5wBcW39RWfpX3fhRUyub?usp=sharing
+https://drive.google.com/drive/folders/1iNKe1xpWTdZe5wBcW39RWfpX3fhRUyub?usp=sharing (old. 3 labels)
+
 + The contents of the folder should be placed in: Python-simple-API/Server/ssd/
 
 ### API methods:
