@@ -1,4 +1,5 @@
 # Python-simple-API
+## for the test version to work correctly, place it on your desktop
 ### A simple set of API methods that include:
 
 + Sending a document with recognition information.
