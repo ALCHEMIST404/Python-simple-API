@@ -20,7 +20,7 @@ import json
 ########################################################################################
 #To work correctly with autorun, you need to specify an absolute path. For ease of modification, it is rendered as a parameter at the beginning of the file. 
 ########################################################################################
-absolute_path = "/home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/ssd/"
+absolute_path = "/home/test/Desktop/Python-simple-API-main/Server/Server_1/ssd/"
 
 class State_recognition(Resource): 
     def get(self):
