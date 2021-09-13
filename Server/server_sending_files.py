@@ -26,7 +26,7 @@ import json
 #Server status    
 
 #ОТПРАВКА
-SERVER_FOLDER = "/home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/Server/"
+SERVER_FOLDER = "/home/test/Desktop/Python-simple-API-main/Server/Server_1/Server/"
 
 class TEST_Server_state(Resource):
         
