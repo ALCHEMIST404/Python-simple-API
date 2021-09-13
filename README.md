@@ -72,18 +72,17 @@ Open the application Startup Applications
 To add a program to startup, use the add button.
 Next, you need to create scripts with the following parameters:
 
++1
 Name: autorun_controll_camera_state
 
 Commend: bash /home/test/Desktop/Python-simple-API-main/Server/Server_1/ssd/autorun_controll_state.sh
 
-
-
++2
 Name: bash server
 
 Commend: bash /home/test/Desktop/Python-simple-API-main/Server/Server_1/autorun_server.sh &
 
-
-
++3
 Name: video bash
 
 Commend: bash /home/test/Desktop/Python-simple-API-main/Server/Server_1/ssd/autorun_camera.sh &
