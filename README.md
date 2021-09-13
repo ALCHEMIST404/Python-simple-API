@@ -59,4 +59,13 @@ Will display the current information about the state of the server
 + todos - Working with the database (test functionality)
 + todos/<todo_id> - Working with the database (test functionality)
 
+## Images used in the repository
+![Иллюстрация к проекту](https://github.com/ALCHEMIST404/Python-simple-API/blob/main/img/1.png)
+This is how your desktop should look like
+# Next, we perform the following procedure:
+![Иллюстрация к проекту](https://github.com/ALCHEMIST404/Python-simple-API/blob/main/img/2.png)
+Open the application Startup Applications
+# Add the necessary scripts to the open window
+![Иллюстрация к проекту](https://github.com/ALCHEMIST404/Python-simple-API/blob/main/img/3.png)
 
+To add a program to startup, use the add button
