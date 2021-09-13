@@ -62,10 +62,21 @@ Will display the current information about the state of the server
 ## Images used in the repository
 ![Иллюстрация к проекту](https://github.com/ALCHEMIST404/Python-simple-API/blob/main/img/1.png)
 This is how your desktop should look like
-# Next, we perform the following procedure:
+## Next, we perform the following procedure:
 ![Иллюстрация к проекту](https://github.com/ALCHEMIST404/Python-simple-API/blob/main/img/2.png)
 Open the application Startup Applications
-# Add the necessary scripts to the open window
+## Add the necessary scripts to the open window
 ![Иллюстрация к проекту](https://github.com/ALCHEMIST404/Python-simple-API/blob/main/img/3.png)
 
-To add a program to startup, use the add button
+To add a program to startup, use the add button.
+Next, you need to create scripts with the following parameters:
+
+Name: autorun_controll_camera_state
+Commend: bash /home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/ssd/autorun_controll_state.sh
+
+Name: bash server
+Commend: bash /home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/autorun_server.sh &
+
+Name: video bash
+Commend: bash /home/test/Desktop/Germany/Python-simple-API-main/Server/Server_1/ssd/autorun_camera.sh &
+
